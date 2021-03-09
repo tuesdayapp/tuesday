@@ -11,17 +11,17 @@ dotenv.config()
 const app = express();
 
 (async () => {
-  const server = new ApolloServer({
-    schema: await buildSchema({
-      resolvers: [
-        TestResolver,
-      ]
-    }),
-    introspection: true,
-    tracing: true
-  })
+	const server = new ApolloServer({
+		schema: await buildSchema({
+			resolvers: [
+				TestResolver,
+			]
+		}),
+		introspection: true,
+		tracing: true
+	})
 
-  server.applyMiddleware({ app, path: '/api/graphql' });
+	server.applyMiddleware({ app, path: '/api/graphql' });
 
-  app.listen(process.env.PORT, () => console.log(`Api service listening at http://localhost:${process.env.PORT} || http://localhost:${process.env.PORT}${server.graphqlPath}`))
+	app.listen(process.env.PORT, () => console.log(`Api service listening at http://localhost:${process.env.PORT} || http://localhost:${process.env.PORT}${server.graphqlPath}`))
 })()
