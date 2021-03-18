@@ -1,7 +1,7 @@
-import { Service } from "typedi";
-import { Connection, UpdateResult } from "typeorm";
-import { InjectConnection } from "typeorm-typedi-extensions";
-import { Stage } from "../Model/Stage";
+import { Service } from 'typedi';
+import { Connection, UpdateResult } from 'typeorm';
+import { InjectConnection } from 'typeorm-typedi-extensions';
+import { Stage } from '../Model/Stage';
 
 @Service()
 export class StageService {

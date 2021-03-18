@@ -1,8 +1,8 @@
-import { worker } from "cluster";
-import { Field, ObjectType } from "type-graphql";
-import { Column, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
-import { Card } from "./Card";
-import { Workflow } from "./Workflow";
+import { worker } from 'cluster';
+import { Field, ObjectType } from 'type-graphql';
+import { Column, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
+import { Card } from './Card';
+import { Workflow } from './Workflow';
 
 @ObjectType()
 @Entity()

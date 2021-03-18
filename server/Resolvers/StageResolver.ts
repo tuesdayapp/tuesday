@@ -1,7 +1,7 @@
-import { Arg, Int, Mutation, Query, Resolver } from "type-graphql";
-import { Service } from "typedi";
-import { Stage } from "../Model/Stage";
-import { StageService } from "../Service/StageService";
+import { Arg, Int, Mutation, Query, Resolver } from 'type-graphql';
+import { Service } from 'typedi';
+import { Stage } from '../Model/Stage';
+import { StageService } from '../Service/StageService';
 
 @Service()
 @Resolver()
@@ -10,8 +10,8 @@ export class StageResolver {
 	
 	@Mutation(type => Int)
 	async AddStageToWorkflow(
-		@Arg("workflowId") workflowId: number,
-		@Arg("stageId") stageId: number
+		@Arg('workflowId') workflowId: number,
+		@Arg('stageId') stageId: number
 	): Promise<number | undefined> {
 		return (await this.stageSerivce.AddStageToWorkflow(workflowId, stageId)).affected;
 	}

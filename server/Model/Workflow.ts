@@ -1,6 +1,6 @@
-import { Field, InputType, ObjectType } from "type-graphql";
-import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
-import { Stage } from "./Stage";
+import { Field, InputType, ObjectType } from 'type-graphql';
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
+import { Stage } from './Stage';
 
 @ObjectType()
 @Entity()
