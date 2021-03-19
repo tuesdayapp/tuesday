@@ -3,13 +3,13 @@ import { ApolloServer } from 'apollo-server-express';
 import { buildSchema } from 'type-graphql';
 import express from 'express';
 import dotenv from 'dotenv';
+import { createConnection, useContainer } from 'typeorm';
+import { Container } from 'typeorm-typedi-extensions'
 
 import { TestResolver } from './Resolvers/TestResolver';
-import { createConnection, useContainer } from 'typeorm';
 import { Card } from './Model/Card';
 import { Stage } from './Model/Stage';
 import { Workflow } from './Model/Workflow';
-import { Container } from 'typeorm-typedi-extensions'
 import { WorkflowResolver } from './Resolvers/WorkflowResolver';
 import { StageResolver } from './Resolvers/StageResolver';
 import { CardResolver } from './Resolvers/CardResolver';
@@ -39,11 +39,11 @@ const app = express();
 
 	createConnection({
 		type: 'postgres',
-		host: 'localhost',
-		port: 5433,
-		username: 'postgres',
-		password: 'test123',
-		database: 'tuesday',
+		host: process.env.DB_HOST,
+		port: parseInt(process.env.DB_PORT),
+		username: process.env.DB_USER,
+		password: process.env.DB_PASS,
+		database: process.env.DB_DATABASE,
 		entities: [
 			Card,
 			Stage,
@@ -51,7 +51,7 @@ const app = express();
 		],
 		synchronize: true,
 		logging: true
-	}).then(async _ => {
+	}).then(async () => {
 		app.listen(process.env.PORT, () => console.log(`Api service listening at http://localhost:${process.env.PORT} || http://localhost:${process.env.PORT}${server.graphqlPath}`))
 	})
 })()

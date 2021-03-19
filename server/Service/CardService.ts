@@ -1,6 +1,7 @@
 import { Service } from 'typedi';
 import { Connection, UpdateResult } from 'typeorm';
 import { InjectConnection } from 'typeorm-typedi-extensions';
+
 import { Card } from '../Model/Card';
 
 @Service()

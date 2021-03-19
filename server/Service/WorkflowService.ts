@@ -1,6 +1,7 @@
 import { Service } from 'typedi';
 import { Connection } from 'typeorm';
 import { InjectConnection } from 'typeorm-typedi-extensions';
+
 import { Workflow } from '../Model/Workflow';
 
 @Service()

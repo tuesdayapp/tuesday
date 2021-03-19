@@ -1,5 +1,6 @@
-import { Arg, Int, Mutation, Query, Resolver } from 'type-graphql';
+import { Arg, Int, Mutation, Resolver } from 'type-graphql';
 import { Service } from 'typedi';
+
 import { Stage } from '../Model/Stage';
 import { StageService } from '../Service/StageService';
 

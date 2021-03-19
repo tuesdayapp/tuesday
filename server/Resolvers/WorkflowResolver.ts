@@ -1,5 +1,6 @@
 import { Arg, Mutation, Query, Resolver } from 'type-graphql';
 import { Service } from 'typedi';
+
 import { Workflow } from '../Model/Workflow';
 import { WorkflowService } from '../Service/WorkflowService';
 
