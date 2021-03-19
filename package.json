@@ -7,7 +7,9 @@
     "buildServer": "tsc -p tsconfig.json",
     "buildServer:live": "nodemon --watch 'server/**/*.ts' --exec \"ts-node\" server/index.ts",
     "webpack:dev": "webpack --config webpack.dev.js",
-    "webpackDevServer": "webpack serve --config webpack.dev.js"
+    "webpackDevServer": "webpack serve --config webpack.dev.js",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "repository": {
     "type": "git",
@@ -22,12 +24,17 @@
   "devDependencies": {
     "@babel/preset-react": "^7.12.13",
     "@babel/preset-typescript": "^7.13.0",
+    "@storybook/addon-actions": "^6.1.21",
+    "@storybook/addon-essentials": "^6.1.21",
+    "@storybook/addon-links": "^6.1.21",
+    "@storybook/react": "^6.1.21",
     "@types/dotenv": "^8.2.0",
     "@types/node": "^14.14.35",
     "@typescript-eslint/eslint-plugin": "^4.17.0",
     "@typescript-eslint/parser": "^4.17.0",
     "eslint": "^7.21.0",
     "nodemon": "^2.0.7",
+    "storybook": "^6.1.21",
     "ts-node": "^9.1.1",
     "webpack-dev-server": "^3.11.2"
   },
